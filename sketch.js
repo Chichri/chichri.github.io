@@ -9,7 +9,7 @@ let lives = 3
 
 
 function preload() {
-  temp1 = loadImage("Assets/ship4.png")
+  temp1 = loadImage("Assets/ship1.png")
   temp2 = loadImage("Assets/y-bullet.png")
 }
 
@@ -28,7 +28,7 @@ function setup() {
   asteroids = new Group()
   bullets = new Group()
 
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 10; i++) {
     //let s = createSprite(random(width), random(height))
     //s.setSpeed(random(3, 5), random(360))
     //asteroids.add(s)
@@ -131,6 +131,14 @@ function draw() {
     fill(192, 57, 43)
     textAlign(CENTER)
     text("Game Over!", width / 2, height / 2)
+  }
+
+  if (asteroids.length == 0) {
+    textSize(60)
+    fill(192, 57, 43)
+    textAlign(CENTER)
+    text("You Win!", width / 2, height / 2)
+    noLoop()
   }
 
 }
